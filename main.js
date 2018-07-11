@@ -19,7 +19,7 @@ window.onload=function(){
                 if (inputLetter.value === boxLetter) {
                     box.innerHTML = boxLetter
                     winScore = winScore + 1
-                    lossScore = lossScore - 3
+                    lossScore = lossScore - (inputWordArray.length - 1)
                 } else {
                     guessedLettersArray.push(inputLetter.value)
                     lossScore = lossScore + 1
@@ -31,12 +31,13 @@ window.onload=function(){
                 if (winScore === inputWordArray.length) {
                     alert('You Win!')
                 }
-                if (lossScore  === 24) {
+                if (lossScore  === (6 * inputWordArray.length)) {
                     alert('You Lost!')
                 }
                 event.preventDefault()
             })
         }
+        inputWord.value = "Good Luck!"
         event.preventDefault()
     })
 }
