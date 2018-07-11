@@ -4,8 +4,11 @@ window.onload=function(){
 
     button.addEventListener('click', function(event) {
         let inputArray = input.value.split("")
-        for (i = 0; i <= inputArray.length; i++) {
-            console.log(inputArray[i])
+        for (i = 0; i < inputArray.length; i++) {
+            let box = document.createElement('div')
+            box.className = 'box'
+            box.innerHTML = inputArray[i];
+            document.querySelector("main").appendChild(box);
         }
         event.preventDefault()
     })
