@@ -4,7 +4,7 @@ window.onload=function(){
     let inputLetter = document.querySelector("#letter-box")
     let buttonLetter = document.querySelector("#submit-letter")
     let guessedLetters = document.querySelector("#guessedLetters")
-    
+
     buttonWord.addEventListener('click', function(event) {
         let winScore = 0
         let lossScore = 0
@@ -15,6 +15,7 @@ window.onload=function(){
             let boxLetter = inputWordArray[i]
             box.className = 'box'
             document.querySelector("main").appendChild(box)
+            box.innerHTML = "_"
             buttonLetter.addEventListener('click', function(event){
                 if (inputLetter.value === boxLetter) {
                     box.innerHTML = boxLetter
