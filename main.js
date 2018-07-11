@@ -6,6 +6,7 @@ window.onload=function(){
     let guessedLetters = document.querySelector("#guessedLetters")
     
     buttonWord.addEventListener('click', function(event) {
+        let score = 0
         let guessedLettersArray = []
         let inputWordArray = inputWord.value.split("")
         for (i = 0; i < inputWordArray.length; i++) {
@@ -16,6 +17,7 @@ window.onload=function(){
             buttonLetter.addEventListener('click', function(event){
                 if (inputLetter.value === boxLetter) {
                     box.innerHTML = boxLetter
+                    score = score + 1
                 } else {
                     guessedLettersArray.push(inputLetter.value)
                     let UguessedLettersArray = guessedLettersArray.filter(function(elem, index, self){
@@ -25,6 +27,9 @@ window.onload=function(){
                 }
                 event.preventDefault()
             })
+            if (score === inputWordArray.length) {
+                alert('You Win!')
+            }
         }
         event.preventDefault()
     })
