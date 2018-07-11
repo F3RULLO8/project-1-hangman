@@ -1,8 +1,9 @@
 body {
     text-align: center;
 }
+
 .box {
-    float: left;
+    display: inline-block; 
     width: 100px;
     height: 100px;
     background: rgb(233, 232, 227);
