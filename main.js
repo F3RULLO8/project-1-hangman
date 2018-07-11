@@ -6,7 +6,8 @@ window.onload=function(){
     let guessedLetters = document.querySelector("#guessedLetters")
     
     buttonWord.addEventListener('click', function(event) {
-        let score = 0
+        let winScore = 0
+        let lossScore = 0
         let guessedLettersArray = []
         let inputWordArray = inputWord.value.split("")
         for (i = 0; i < inputWordArray.length; i++) {
@@ -17,16 +18,21 @@ window.onload=function(){
             buttonLetter.addEventListener('click', function(event){
                 if (inputLetter.value === boxLetter) {
                     box.innerHTML = boxLetter
-                    score = score + 1
+                    winScore = winScore + 1
+                    lossScore = lossScore - 3
                 } else {
                     guessedLettersArray.push(inputLetter.value)
+                    lossScore = lossScore + 1
                     let UguessedLettersArray = guessedLettersArray.filter(function(elem, index, self){
                         return index == self.indexOf(elem);
                     })
                     guessedLetters.innerHTML = UguessedLettersArray
                 }
-                if (score === inputWordArray.length) {
+                if (winScore === inputWordArray.length) {
                     alert('You Win!')
+                }
+                if (lossScore  === 24) {
+                    alert('You Lost!')
                 }
                 event.preventDefault()
             })
