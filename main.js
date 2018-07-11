@@ -38,6 +38,10 @@ window.onload=function(){
                 event.preventDefault()
             })
         }
+        buttonLetter.addEventListener('click', function(event){
+            inputLetter.value = ""
+            event.preventDefault()
+        })
         inputWord.value = "Good Luck!"
         event.preventDefault()
     })
