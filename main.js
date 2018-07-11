@@ -8,12 +8,16 @@ window.onload=function(){
         let inputWordArray = inputWord.value.split("")
         for (i = 0; i < inputWordArray.length; i++) {
             let box = document.createElement('div')
-            box = inputWordArray[i]
+            let boxLetter = inputWordArray[i]
             box.className = 'box'
-            document.querySelector("main").appendChild(box);
+            document.querySelector("main").appendChild(box)
+            buttonLetter.addEventListener('click', function(event){
+                if (inputLetter.value === boxLetter) {
+                    box.innerHTML = boxLetter
+                }
+                event.preventDefault()
+            })
         }
         event.preventDefault()
     })
-  }
-
-//   box.innerHTML = inputWordArray[i]
+}
