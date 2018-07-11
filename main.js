@@ -26,19 +26,19 @@ window.onload=function(){
                     box.innerHTML = boxLetter
                     winScore = winScore + 1
                     lossScore = lossScore - (inputWordArray.length - 1)
+                    if (winScore === inputWordArray.length) {
+                        alert("Winner!")
+                    }
                 } else {
                     guessedLettersArray.push(inputLetter.value)
                     lossScore = lossScore + 1
                     let UguessedLettersArray = guessedLettersArray.filter(function(elem, index, self){
                         return index == self.indexOf(elem);
                     })
+                    if (lossScore  === (6 * inputWordArray.length)) {
+                        alert("Hangman!")
+                    }
                     guessedLetters.innerHTML = UguessedLettersArray
-                }
-                if (winScore === inputWordArray.length) {
-                    alert('You Win!')
-                }
-                if (lossScore  === (6 * inputWordArray.length)) {
-                    alert('You Lost!')
                 }
                 event.preventDefault()
             })
