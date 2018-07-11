@@ -1,15 +1,19 @@
 window.onload=function(){
-    let input = document.querySelector("#word-box")
-    let button = document.querySelector("#submit-word")
+    let inputWord = document.querySelector("#word-box")
+    let buttonWord = document.querySelector("#submit-word")
+    let inputLetter = document.querySelector("#letter-box")
+    let buttonLetter = document.querySelector("#submit-letter")
 
-    button.addEventListener('click', function(event) {
-        let inputArray = input.value.split("")
-        for (i = 0; i < inputArray.length; i++) {
+    buttonWord.addEventListener('click', function(event) {
+        let inputWordArray = inputWord.value.split("")
+        for (i = 0; i < inputWordArray.length; i++) {
             let box = document.createElement('div')
+            box = inputWordArray[i]
             box.className = 'box'
-            box.innerHTML = inputArray[i];
             document.querySelector("main").appendChild(box);
         }
         event.preventDefault()
     })
   }
+
+//   box.innerHTML = inputWordArray[i]
