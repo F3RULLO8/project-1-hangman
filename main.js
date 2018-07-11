@@ -15,7 +15,12 @@ window.onload=function(){
             let boxLetter = inputWordArray[i]
             box.className = 'box'
             document.querySelector("#main").appendChild(box)
-            box.innerHTML = "___"
+            if (inputWordArray[i] === " ") {
+                box.innerHTML = " "
+                winScore = winScore + 1
+            } else {
+                box.innerHTML = "___"
+            }
             buttonLetter.addEventListener('click', function(event){
                 if (inputLetter.value === boxLetter) {
                     box.innerHTML = boxLetter
