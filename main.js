@@ -25,11 +25,11 @@ window.onload=function(){
                     })
                     guessedLetters.innerHTML = UguessedLettersArray
                 }
+                if (score === inputWordArray.length) {
+                    alert('You Win!')
+                }
                 event.preventDefault()
             })
-            if (score === inputWordArray.length) {
-                alert('You Win!')
-            }
         }
         event.preventDefault()
     })
