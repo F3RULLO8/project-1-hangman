@@ -25,7 +25,7 @@ window.onload=function(){
                 box.innerHTML = "___"
             }
             buttonLetter.addEventListener('click', function(event){
-                if (inputLetter.value === boxLetter && inputLetter.value != usedLetterArray) {
+                if (inputLetter.value === boxLetter && usedLetterArray.includes(inputLetter.value) === false) {
                     usedLetterArray.push(inputLetter.value)
                     box.innerHTML = boxLetter
                     winScore = winScore + 1
