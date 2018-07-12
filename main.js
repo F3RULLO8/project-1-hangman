@@ -4,10 +4,12 @@ window.onload=function(){
     let inputLetter = document.querySelector("#letter-box")
     let buttonLetter = document.querySelector("#submit-letter")
     let guessedLetters = document.querySelector("#guessedLetters")
+    let stick = document.querySelector('#stick')
 
     buttonWord.addEventListener('click', function(event) {
         let winScore = 0
         let lossScore = 0
+        stick.src = ""
         let guessedLettersArray = []
         let inputWordArray = inputWord.value.split("")
         for (i = 0; i < inputWordArray.length; i++) {
@@ -40,8 +42,29 @@ window.onload=function(){
                     }
                     guessedLetters.innerHTML = UguessedLettersArray
                 }
+                stickFigure (lossScore)
                 event.preventDefault()
             })
+        }
+        function stickFigure (lossScore){
+            if (lossScore === inputWordArray.length) {
+                stick.src = "hangman-16.png"
+            }
+            if (lossScore === (2 * inputWordArray.length)) {
+                stick.src = "hangman-26.png"
+            }
+            if (lossScore === (3 * inputWordArray.length)) {
+                stick.src = "hangman-36.png"
+            }
+            if (lossScore === (4 * inputWordArray.length)) {
+                stick.src = "hangman-46.png"
+            }
+            if (lossScore === (5 * inputWordArray.length)) {
+                stick.src = "hangman-56.png"
+            }
+            if (lossScore === (6 * inputWordArray.length)) {
+                stick.src = "hangman-66.png"
+            }
         }
         buttonLetter.addEventListener('click', function(event){
             inputLetter.value = ""
