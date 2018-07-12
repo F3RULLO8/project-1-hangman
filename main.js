@@ -1,3 +1,4 @@
+// Declarng the varibles for the html
 window.onload=function(){
     let inputWord = document.querySelector("#word-box")
     let buttonWord = document.querySelector("#submit-word")
@@ -5,14 +6,16 @@ window.onload=function(){
     let buttonLetter = document.querySelector("#submit-letter")
     let guessedLetters = document.querySelector("#guessedLetters")
     let stick = document.querySelector('#stick')
-
+// Enter word button to start the code
     buttonWord.addEventListener('click', function(event) {
+        // Setting variables to starting values
         let winScore = 0
         let usedLetterArray = []
         let lossScore = 0
         stick.src = ""
         let guessedLettersArray = []
         let inputWordArray = inputWord.value.split("")
+        // loop to give each letter a div and set spaces
         for (i = 0; i < inputWordArray.length; i++) {
             let box = document.createElement('div')
             let boxLetter = inputWordArray[i]
@@ -24,7 +27,9 @@ window.onload=function(){
             } else {
                 box.innerHTML = "___"
             }
+            // button to see if the value entered is equal to any of the values of the word
             buttonLetter.addEventListener('click', function(event){
+                // test to see if matches and same letter cant be repeated
                 if (inputLetter.value === boxLetter && usedLetterArray.includes(inputLetter.value) === false) {
                     usedLetterArray.push(inputLetter.value)
                     box.innerHTML = boxLetter
@@ -34,6 +39,7 @@ window.onload=function(){
                         alert("Winner!")
                     }
                 } else {
+                    // if doesnt match adds a losing score and addeds to guessed div
                     if (inputLetter.value === boxLetter){
                         usedLetterArray.push(inputLetter.value)
                         box.innerHTML = boxLetter
@@ -44,6 +50,7 @@ window.onload=function(){
                     } 
                     guessedLettersArray.push(inputLetter.value)
                     lossScore = lossScore + 1
+                    // makes sure no repeating letters in the array
                     let UguessedLettersArray = guessedLettersArray.filter(function(elem, index, self){
                         return index == self.indexOf(elem);
                     })
@@ -53,10 +60,12 @@ window.onload=function(){
                     }
                     guessedLetters.innerHTML = UguessedLettersArray
                 }  
+                // calls stick figure
                 stickFigure (lossScore)
                 event.preventDefault()
             })
         }
+        // this changes the stick figure to the matching picture to get hangman
         function stickFigure (lossScore){
             if (lossScore === inputWordArray.length) {
                 stick.src = "hangman-16.png"
@@ -77,6 +86,7 @@ window.onload=function(){
                 stick.src = "hangman-66.png"
             }
         }
+        // sets input boxes to blanks after you have used them
         buttonLetter.addEventListener('click', function(event){
             inputLetter.value = ""
             event.preventDefault()
@@ -85,4 +95,3 @@ window.onload=function(){
         event.preventDefault()
     })
 }
-// Losing BUg if u try the same letter u wont loss at 6 mistakes
