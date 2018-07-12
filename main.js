@@ -38,7 +38,7 @@ window.onload=function(){
                         usedLetterArray.push(inputLetter.value)
                         box.innerHTML = boxLetter
                         winScore = winScore + 1
-                    }
+                    } else {
                     guessedLettersArray.push(inputLetter.value)
                     lossScore = lossScore + 1
                     let UguessedLettersArray = guessedLettersArray.filter(function(elem, index, self){
@@ -50,6 +50,7 @@ window.onload=function(){
                     }
                     guessedLetters.innerHTML = UguessedLettersArray
                 }
+                }   
                 stickFigure (lossScore)
                 event.preventDefault()
             })
