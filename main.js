@@ -36,7 +36,7 @@ window.onload=function(){
                         return index == self.indexOf(elem);
                     })
                     if (lossScore  === (6 * inputWordArray.length)) {
-                        alert("Hangman!")
+                        alert("Loser!")
                     }
                     guessedLetters.innerHTML = UguessedLettersArray
                 }
@@ -51,4 +51,4 @@ window.onload=function(){
         event.preventDefault()
     })
 }
-// Losing BUg try Starwars and lose
+// Losing BUg if u try the same letter u wont loss at 6 mistakes
