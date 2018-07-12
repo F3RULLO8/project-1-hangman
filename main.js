@@ -37,6 +37,7 @@ window.onload=function(){
                     if (inputLetter.value === boxLetter){
                         usedLetterArray.push(inputLetter.value)
                         box.innerHTML = boxLetter
+                        winScore = winScore + 1
                     }
                     guessedLettersArray.push(inputLetter.value)
                     lossScore = lossScore + 1
