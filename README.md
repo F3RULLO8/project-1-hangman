@@ -11,15 +11,15 @@ for (i = 0; i < inputWordArray.length; i++) {
             document.querySelector("#main").appendChild(box)
 ```
 List of features 
-    * User inputs a word and blanked spaces appear
-    * Another user can guess letters they'll go into a array displayed of guessed lettters
-    * If correct the letter will appear accordingly and fill the blank spot
-    * If wrong it will add to the drawing of hangman
-    * Once hangman is fully drawn you loss
-    * Or if the word is complete you win!
+* User inputs a word and blanked spaces appear
+* Another user can guess letters they'll go into a array displayed of guessed lettters
+* If correct the letter will appear accordingly and fill the blank spot
+* If wrong it will add to the drawing of hangman
+* Once hangman is fully drawn you loss
+* Or if the word is complete you win!
 
 Technologies used
-    * Html
-    * CSS
-    * Javascript
+* Html
+* CSS
+* Javascript
 
